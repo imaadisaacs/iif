@@ -34,7 +34,7 @@
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.8.6",
     "siteFonts": [],
-    "uniqCompNum": 23,
+    "uniqCompNum": 26,
     "versionPublish": "5.7.4",
     "screenshot": "screenshot.png",
     "favicon": "@PROJECT_PATH@/assets/images/new-imaadisaacsfoundation-logo-copy-128x26.png",
@@ -228,75 +228,75 @@
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
             "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".mbr-text": {
-              "margin-bottom": "0"
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
             },
-            ".mbr-section-title": {
-              "margin": "0"
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-text": {
+              "color": "#000000"
             }
           },
-          "_name": "content2",
-          "_customHTML": "<section class=\"content2 mbr-section article\" plugins=\"amp-main\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-8\">\n                <h3 class=\"mbr-fonts-style mbr-section-title mbr-light\" mbr-if=\"showTitle\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title\"><b>Teaching Fellowship Program</b></h3>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article>The IIF Teaching Fellowship Program prepares university graduates and career-changers to become extraordinary teachers. The Teaching Fellowship Program is a two-year full-time (either 07h00-15h30 or 08h00-16h30) program that entails:<br><br>NB: The second year is dependent on meeting first year requirements.</p>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "rCCBV33OWX",
-          "_anchor": "content2-a",
+          "_name": "content4",
           "_sourceTheme": "mobirise-amp",
+          "_customHTML": "<section class=\"content4 mbr-section article\" plugins=\"amp-main\" group=\"Article\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Style</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"1\">\n        <select name=\"alignContent\" title=\"Align Content\">\n            <option value=\"1\">Left</option>\n            <option value=\"2\" selected>Center</option>\n            <option value=\"3\">Right</option>\n        </select>\n        <input type=\"range\" title=\"Width\" name=\"textWidth\" min=\"4\" max=\"12\" step=\"1\" value=\"10\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"../_images/background4.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"mbr-row\" mbr-class=\"{'mbr-jc-c' : alignContent == 2, 'mbr-jc-e' : alignContent == 3}\">\n            <div class=\"mbr-col-sm-12 mbr-md-12 mbr-col-lg-{{textWidth}}\">\n                <p class=\"mbr-text align-center mbr-fonts-style mbr-regular\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text\"><b>\n                    Teaching Fellowship Program - 2024<br>2-year on-site / hybrid</b></p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "tSoDYzxHts",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {}
+          "_params": {},
+          "_anchor": "content4-p"
         },
         {
           "alias": false,
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
             "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
             ".counter-container": {
-              "ol": {
-                "margin-bottom": "0",
+              "ol when (@stylizedCounters)": {
+                "list-style": "none",
+                "counter-reset": "myCounter",
                 "li": {
-                  "margin-bottom": "2rem"
-                },
-                "& when (@stylizedCounters)": {
-                  "counter-reset": "myCounter",
-                  "li": {
-                    "z-index": "3",
-                    "list-style": "none",
-                    "padding-left": ".5rem",
-                    "&:before": {
-                      "z-index": "2",
-                      "position": "absolute",
-                      "left": "0px",
-                      "counter-increment": "myCounter",
-                      "content": "counter(myCounter)",
-                      "text-align": "center",
-                      "margin": "0 10px",
-                      "line-height": "30px",
-                      "transition": "all .2s",
-                      "width": "35px",
-                      "height": "35px",
-                      "color": "@counterColor",
-                      "font-size": "20px",
-                      "font-weight": "bold",
-                      "border-radius": "50%",
-                      "border": "2px solid @counterColor",
-                      "opacity": "@counterOpacity"
-                    }
+                  "position": "relative",
+                  "&:before": {
+                    "box-sizing": "border-box",
+                    "position": "absolute",
+                    "left": "-60px",
+                    "counter-increment": "myCounter",
+                    "content": "counter(myCounter)",
+                    "text-align": "center",
+                    "margin": "0 10px",
+                    "width": "35px",
+                    "height": "35px",
+                    "color": "@counterColor",
+                    "font": "~\"bold 20px / 30px @{display4Font}\"",
+                    "border-radius": "50%",
+                    "border": "2px solid @counterColor",
+                    "opacity": "@counterOpacity"
                   }
                 }
               }
+            },
+            ".mbr-text": {
+              "color": "#20202a"
             }
           },
           "_name": "content9",
-          "_customHTML": "<section class=\"mbr-section content9\" plugins=\"amp-main\">\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n        <input type=\"checkbox\" title=\"Stylized Counters\" name=\"stylizedCounters\" checked>\n        \n        <input type=\"color\" title=\"Counters Color\" name=\"counterColor\" value=\"#ff0000\" condition=\"stylizedCounters\">\n        <input type=\"range\" title=\"Counters Opacity\" inline name=\"counterOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"stylizedCounters\">\n        \n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"mbr-container\">\n        <div class=\"mbr-text counter-container mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article>\n            <ol>\n                <li>​Rigorous pre-service training incorporating all the high-leverage practical skills that teachers need to survive their rookie year and the years to come;</li><li>Weekly opportunities for observation and engagement to practice classroom skills in our Partners' Tuition and School Programs;</li><li>Tailored curriculum facilitated by the Imaad Isaacs Foundation and Futures Academy to learn the best teaching techniques for digital, virtual and low-resourced classrooms, professional engagement in the workplace; and the use of evidence-based practices for teaching and learning;</li><li>Enrollment in a Postgraduate Certificate in Education (PGCE) program at an accredited South African University</li>\n            </ol>\n        </div>\n    </div>\n</section>",
-          "_cid": "rCCHP8TGaK",
-          "_anchor": "content9-d",
           "_sourceTheme": "mobirise-amp",
+          "_customHTML": "<section class=\"mbr-section 07\" plugins=\"amp-main\">\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n        <select name=\"alignContent\" title=\"Align Content\">\n            <option value=\"1\">Left</option>\n            <option value=\"2\" selected>Center</option>\n            <option value=\"3\">Right</option>\n        </select>\n        <input type=\"range\" title=\"Width\" name=\"textWidth\" min=\"4\" max=\"12\" step=\"1\" value=\"10\">\n        <header>Counters</header>\n        <input type=\"checkbox\" title=\"Stylized\" name=\"stylizedCounters\" checked>\n        <input type=\"color\" title=\"Counters\" name=\"counterColor\" value=\"#ff0000\" condition=\"stylizedCounters\">\n        <input type=\"range\" title=\"Opacity\" inline name=\"counterOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"1\" condition=\"stylizedCounters\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Image\" value=\"../_images/background4.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>  \n\n    <div class=\"container\">\n        <div class=\"mbr-row\" mbr-class=\"{'mbr-jc-c' : alignContent == 2, 'mbr-jc-e' : alignContent == 3}\">\n            <div class=\"mbr-col-lg-{{textWidth}} mbr-col-md-12 mbr-col-sm-12\">\n                <div class=\"mbr-text counter-container mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article>\n                    <ol>\n                        <li class=\"mbr-pb-2\"><span style=\"font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;\">​Rigorous pre-service training incorporating all the high-leverage practical skills that teachers need to survive their rookie year and the </span><span style=\"font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;\">years</span><span style=\"font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;\"> to come;</span></li><li class=\"mbr-pb-2\"><span style=\"font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;\">Weekly opportunities for observation and engagement to practice classroom skills in our Partners' Tuition and School </span><span style=\"font-family: inherit; font-size: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;\"><i>Programs</i></span><span style=\"font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;\">;</span></li><li class=\"mbr-pb-2\"><span style=\"font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;\">Tailored curriculum facilitated by the Imaad Isaacs Foundation and Futures Academy to learn the best teaching techniques for digital, virtual and low-resourced classrooms, professional engagement in the workplace; and the use of evidence-based practices for teaching and learning;</span></li><li class=\"mbr-pb-2\"><span style=\"font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit;\">Enrollment in a Postgraduate Certificate in Education (PGCE) program at an accredited South African University</span></li>\n                    </ol>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "tSoDUNDENA",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {}
+          "_params": {},
+          "_anchor": "content9-o"
         },
         {
           "alias": false,
